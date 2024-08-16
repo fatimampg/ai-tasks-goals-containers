@@ -1,0 +1,288 @@
+ @import '../../base.css';
+
+.sidebar-container {
+    background-color: white;
+    position: fixed;
+    left:0;
+    top: 3.83125rem;
+    bottom: 0;
+    overflow-y: scroll;
+    width: 15.3125rem;
+}
+
+.sidebar__progress-button {
+    margin: 0.625rem 0.625rem 0rem 0rem;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+}
+.sidebar__goals-items, .sidebar__categories, .sidebar__progress-items {
+    margin: 0.625rem 1.25rem auto 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-top: 0.9375rem;
+}
+.sidebar__categories {
+    padding-top: 0.9375rem;
+}
+.sidebar-container h1{
+    color: var(--dark-grey);
+    font-weight: 700;
+    font-family: AptosBold, sans-serif;
+}
+.sidebar-container label{
+    color: var(--color-text-on-primary-light);
+    font-weight:400;
+    font-size: 0.9375rem;
+}
+.sidebar__insert--date {
+    display: flex;
+    flex-direction: row;
+    align-items: center
+}
+
+.sidebar__month-input {
+    font-size: 0.9375rem;
+    font-family: var(--font-family);
+    color: var(--color-text-on-primary-light);
+    background-color: var(--main-color-bg);
+    border: 0 solid var(--color-text-on-primary-light);
+    width: 129.0.875rem;
+    height: 1.125rem;
+    margin: 0.625rem 0rem 0.625rem 0.625rem ;
+    padding: 0.125rem 0 0.125rem 0;
+    text-align: center;
+}
+.sidebar__month-input::placeholder {
+    font-family: var(--font-family);
+    font-size: 0.9375rem;
+    color: var(--color-text-on-primary-light);
+}
+.sidebar__search-box {
+    margin-bottom: 1.875rem;
+    margin-top: 0.625rem;
+    text-align: center;
+}
+.sidebar-container li{
+    font-size: 1rem;
+    font-family: var(--font-family);
+    color: black;
+       
+}
+.sidebar__icon-title-pair {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.sidebar__icon-title-pair li {
+    margin-left: 0.3125rem;
+}
+
+.sidebar__button-secondary {
+    display: block;
+    font-size: 0.95rem;
+    width: 11.8rem;
+    height: 1.8rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box; 
+    cursor: pointer;
+    margin: 0.4375rem 0rem 0.4375rem 0rem;
+    background-color: var(--main-color-bg);
+    border: 0.22rem solid var(--main-color-bg);
+    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    transition: outline 0.1s linear;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.sidebar__button-secondary:hover, .sidebar__button-secondary:focus {
+    outline: 0.15rem solid var(--grey-text);
+    outline-offset: -0.2rem;
+    background-color: var(--grey-text) ;
+    color: var(--white)
+}
+
+.sidebar__button-primary {
+    font-size: 1rem;
+    font-family: var(--font-family);
+    font-weight: 400;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    width: 11.25rem;
+    height: auto;
+    border-radius: 0.4rem;
+    box-sizing: border-box; 
+    cursor: pointer;
+    transition: outline 0.1s linear;
+    vertical-align: middle;
+    margin: 0.9375rem 0rem 0.9375rem 0rem;
+    background-color: var(--color-button-primary-bg);
+    border: 0.1rem solid var(--color-button-primary-bg);
+    color: white;
+    box-shadow: 0 0.0625rem 0.1875rem 0 rgba(0, 0, 0, 0.1), 0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.06);
+    transition: outline 0.1s linear;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    word-wrap: break-word;
+    margin: 0.3125rem 0 0.9375rem 0;
+
+}
+.sidebar__button-primary:hover {
+    background-color: var(--light-grey-bg);
+    border: 0.15rem solid var(--light-grey-bg);    
+}
+
+.sidebar__tasks-items {
+    margin: 1.875rem 1.25rem auto 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+
+}
+
+.sidebar__date-input {
+    font-size: 0.9375rem;
+    font-family: var(--font-family);
+    color: var(--color-text-on-primary-light);
+    background-color: var(--main-color-bg);
+    border: 0 solid var(--color-text-on-primary-light);
+    width: 8.4375rem;
+    margin-left: 0.625rem;
+    padding: 0.125rem;
+    text-align: center;
+}
+
+.sidebar__text-date-pair {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    list-style-type: none;
+    margin: 0.625rem 0 0rem 0;
+}
+.sidebar__tasks-items .sidebar__icon-title-pair li:first-child {
+  background-color: var(--main-color-bg);
+  border-radius: 0.5rem;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0
+}
+.add-task-goal-button {
+    margin-top: 0.9375rem;
+    margin-bottom: 3.4375rem;
+}
+
+
+@media (max-width: 650px) {
+.sidebar-container {
+    background-color: white;
+    position: sticky;
+    padding-top: 3.1819rem;
+    overflow-y:unset;
+    width: 100vw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    grid-template-rows: 0.3fr 1fr;
+    grid-column-gap: 0rem;
+    grid-row-gap: 0rem;
+}
+.sidebar__progress-button {
+   grid-area: 1 / 2 / 1 / 2;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1.25rem;
+
+}
+.sidebar__categories {
+    grid-area: 1 / 1 / 3 / 2;;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem; 
+    padding-top: 0rem; 
+   
+}
+.sidebar__goals-items, .sidebar__tasks-items {
+    grid-area: 1 / 2 / 3 / 3;
+    margin: 1.25rem 0.625rem auto 0.625rem;
+    padding-top: 0rem;
+}
+.sidebar__progress-items {
+   grid-area: 2 / 2 / 3 / 3;
+   margin:auto;
+   padding:0;
+   margin-top: 0; 
+}
+.add-task-goal-button {
+    margin-top: 0.625rem;
+    margin-bottom: 1.5625rem;
+}
+.sidebar__search-box {
+    margin-bottom: 0.625rem;
+}
+.sidebar-container h1{
+    font-size: 1rem;
+}
+.sidebar-container label{
+    font-size: 0.875rem !important;
+}
+
+.sidebar__month-input {
+    font-size: 0.875rem;
+}
+.sidebar__month-input::placeholder {
+    font-size: 0.875rem;
+}
+.sidebar-container li{
+    font-size: 0.875rem;     
+}
+.sidebar__button-secondary {
+    font-size: 0.875rem;
+    width: 8.875rem;
+    height: 1.8rem;
+    margin: 0.4375rem 0rem 0.4375rem 0rem;
+}
+.sidebar__button-primary {
+    font-size: 0.875rem;
+    padding-top: 0.625rem;
+    padding-bottom: 0.625rem;
+    width: 8.75rem;
+    font-family: var(--font-family);
+    font-weight: 400;
+    height: auto;
+        word-wrap: break-word;
+    padding: 0.3125rem
+}
+
+
+.sidebar__date-input {
+    font-size: 0.875rem;
+    width: 6.25rem;
+    margin-left: 0.3125rem;
+}
+
+.sidebar__tasks-items {
+    margin: 1.25rem 0.625rem auto 0.625rem;
+}
+.sidebar__month-input {
+    font-size: 0.875rem;
+    width: 6.25rem;
+    height: 1.125rem;
+    margin: 0.625rem 0rem 0.625rem 0.3125rem ;
+}
+}
+
+@media (max-width: 520px) {
+.sidebar-container {
+    background-color: white;
+    position: sticky;
+    width: 100%;
+}
+} 
