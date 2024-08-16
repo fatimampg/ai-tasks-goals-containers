@@ -24,7 +24,7 @@ describe("Navbar", () => {
     ...toBeReplaced,
   });
 
-  const renderNavbar = (store) => {
+  const renderNavbar = (store: any) => {
     render(
       <Provider store={store}>
         <BrowserRouter>
