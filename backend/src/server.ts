@@ -21,7 +21,7 @@ const stage = process.env.STAGE;
 const corsOptions =
   stage === "local"
     ? {
-        origin: "http://localhost:5173",
+        origin: ["http://web:3000", process.env.REACT_APP_URL_LOCAL!],
         optionsSuccessStatus: 200,
         credentials: true,
       }
@@ -43,6 +43,7 @@ if (stage === "production") {
     res.set("Access-Control-Allow-Origin", origin);
     res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
     res.set("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.set("Access-Control-Allow-Credentials", "true");
     res.set(200).end();
   });
 }
