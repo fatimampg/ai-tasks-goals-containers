@@ -11,7 +11,7 @@
 ### Frontend:
 - Developed using **TypeScript**, **React**, **Redux** Toolkit and **CSS** for styling.
 ### Backend:
-- **API and Database**: Built with Node.js, TypeScript, Express.js and Axios, along with PostgreSQL database, and using Prisma to interact with the database.
+- **API and Database**: Built with Node.js, TypeScript, Express.js and Axios, along with PostgreSQL database and Prisma.
 - **User Authentication**: JWT authentication with Node.js and password hashing with bcrypt.
 - **LLM**: integrated GPT-4 model from OpenAI. Structured approach using Zod and Langchain to support consistency of the results and ensure compatibility between the AI-generated data and the database.
 ### Testing: 
@@ -36,3 +36,18 @@
     - **Insights and Tagging**: (results of the analysis)
         - Each goal is tagged as "Needs improvement", "In Progress" or "Achieved".
         - A brief overview of the monthly progress is provided, as well as suggestions to enhance productivity.
+
+<br/>  
+
+### Docker:
+
+- **Running the Application with Docker**: 
+    - Add `env`files to the root directory, frontend folder and backend folder and define respective environment variables (refer to .env.example files).
+    - Run `docker-compose up --build` command in the root directory of the project to build Docker images and start containers.
+    - Run `docker-compose down`command to stop and remove containers, networks, volumes and images created by `up`.
+    - For more information in Docker Compose CLI, check the [official documentation](https://docs.docker.com/compose/reference/)
+
+<br/> 
+
+- Access the web application in your browser at: "http://localhost:3000".
+- The API service will be available at: "http://localhost:3001".
