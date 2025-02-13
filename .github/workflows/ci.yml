@@ -147,7 +147,7 @@ jobs:
 
             - name: Create .env file for frontend
               run: |
-                echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" >> ./frontend/.env
+                echo "VITE_BACKEND_URL=http://backend:3001" >> ./frontend/.env
 
             - name: Start Backend and Frontend (Docker)
               env:
@@ -157,11 +157,15 @@ jobs:
               run: |
                 docker-compose -f docker-compose.yml up -d
                 docker-compose -f docker-compose.yml ps
+            
+            - name: Check running containers ports
+              run: docker ps --format "table {{.Name}}\t{{.Ports}}"
 
             - name: Run E2E tests
               uses: cypress-io/github-action@v6
               with:
                 wait-on: "http://localhost:3000"
+                # wait-on-timeout: 120
             
             - name: Stop and clean Docker containers
               run: docker-compose -f docker-compose.yml down
