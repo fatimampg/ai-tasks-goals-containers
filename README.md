@@ -1,8 +1,6 @@
-# AI Tasks and Goals Manager
+# AI Tasks and Goals Manager (GOALSYNC)
 
 ### Full-stack application designed to assist users align tasks with predefined goals, thereby boosting productivity and goal achievement.
-
-> (*Web application under development*)
 
 > (*This web application is a personnal project designed to showcase its capabilities and the integration of the OpenAI GPT-4 model. Please do not enter any sensitive or personnal information. For more details on the usage of the OpenAI model, refer to Open AI's Usage Policies.*)
 <br/>
@@ -15,8 +13,8 @@
 - **User Authentication**: JWT authentication with Node.js and password hashing with bcrypt.
 - **LLM**: integrated GPT-4 model from OpenAI. Structured approach using Zod and Langchain to support consistency of the results and ensure compatibility between the AI-generated data and the database.
 ### Testing: 
-- **Unit and Integration Tests**: Vitest and React Testing Library *(under development)*.
-- **End-to-End Tests**: Cypress *(under development)*.
+- **Unit and Integration Tests**: Vitest and React Testing Library.
+- **End-to-End Tests**: Cypress .
 
 <br/>
 
@@ -36,3 +34,81 @@
     - **Insights and Tagging**: (results of the analysis)
         - Each goal is tagged as "Needs improvement", "In Progress" or "Achieved".
         - A brief overview of the monthly progress is provided, as well as suggestions to enhance productivity.
+
+
+
+## CI pipeline:
+
+1. **Install Dependencies, build and run tests** for both the frontend and backend.
+2. **Docker-compose Build and Push** to ensure the application works within the containerized environment (docker-compose combines all containers - database, api and client).
+3. **Run E2E tests** using Cypress.
+
+GitHub Actions configuration file: `.github/workflows/ci.yml`
+
+
+## Setup project :
+
+**Clone repository**:
+
+```bash
+git clone https://github.com/fatimampg/ai-tasks-goals-containers.git
+cd ai-tasks-goals-containers
+```
+### Run tests locally:
+
+1. **Install dependencies:** (root, frontend and backend)
+
+```bash
+npm i
+``` 
+
+2. **Run tests from backend (/backend)** 
+
+```bash
+npm test
+```
+
+3. **Run tests from frontend (/frontend)** 
+
+```bash
+npm test
+```
+
+4. **Run server (/backend) and client (/frontend)** 
+
+```bash
+npn run dev
+```
+
+4. **Run E2E tests (root)** 
+
+```bash
+npx cypress open
+```
+
+### Setup with Docker:
+
+**Create .env files** </br>
+Add .env files in root, /frontend and /backend (use the example.env files as reference)
+
+
+**Build Docker image:**
+
+```docker
+docker-compose up -d --build
+```
+
+**Check containers running:**
+
+```docker
+docker ps
+```
+
+**Access the application:** <br/>
+Available on : http://localhost:3000/
+
+**Stop containers**
+
+```docker
+docker-compose down
+```
