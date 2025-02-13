@@ -13,7 +13,7 @@ const parser = StructuredOutputParser.fromZodSchema(
     recommendations: z
       .string()
       .describe(
-        "Based on the analysis of tasks progress and goals, and priority set for each task, give specific recommendations to help me complete unsuccessful tasks and achieve the related unmet goals.",
+        "For each category: Write specific, concrete, and actionable advice per category. Include: 1) A breakdown of steps to address unfinished tasks, 2) Suggestions for overcoming obstacles based on priorities and deadlines, 3) Advice tailored to each goal's status ('NEEDS_IMPROVEMENT', 'IN_PROGRESS', or 'ACHIEVED'), 4) Format your response to clearly distinguish between different categories."
       ),
     status: z.array(
       z.object({
@@ -45,7 +45,7 @@ const getPrompt = async (content: any) => {
 
 export const analyze = async (content: any) => {
   const input = await getPrompt(content);
-  const model = new OpenAI({ temperature: 0, modelName: "gpt-4-turbo" });
+  const model = new OpenAI({ temperature: 0.5, modelName: "gpt-4" });
   const result = await model.invoke(input);
   console.log(result);
   try {
