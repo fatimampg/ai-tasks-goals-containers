@@ -161,11 +161,16 @@ jobs:
             - name: Check running containers ports
               run: docker ps --format "table {{.Names}}\t{{.Ports}}"
 
+            - name: Logs from backend
+              run: docker-compose logs ai-tasks-goals-containers-api-1
+
             - name: Run E2E tests
               uses: cypress-io/github-action@v6
               with:
-                wait-on: "http://localhost:3000"
-                # wait-on-timeout: 120
+                wait-on: "http://backend:3001"
+                wait-on-timeout: 180
+                # wait-on: "http://localhost:3000"
+                # # wait-on-timeout: 120
             
             - name: Stop and clean Docker containers
               run: docker-compose -f docker-compose.yml down
