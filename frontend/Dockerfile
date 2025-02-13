@@ -2,11 +2,6 @@ FROM node:20 AS node-builder
 WORKDIR /app
 COPY . . 
 
-# alt:
-# RUN npm install
-# EXPOSE 3000
-# CMD ["npm", "run", "dev"]
-
 RUN npm ci
 RUN npm run build
 
