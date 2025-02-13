@@ -11,13 +11,6 @@ describe("Dashboard header", () => {
   };
 
   it("should display the name of the user", async () => {
-    // server.use(
-    //   http.get("http://localhost:3001/api/username", () => {
-    //     return HttpResponse.json({
-    //       userName: "John",
-    //     });
-    //   }),
-    // ); --> added to handlers
 
     renderHeader();
     const userName = await screen.findByTestId("username");
