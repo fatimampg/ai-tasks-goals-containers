@@ -89,17 +89,17 @@ jobs:
               run: |
                 echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" >> ./frontend/.env
 
-            - name: Archive backend env file artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: backend-env
-                path: ./backend/.env
+            # - name: Archive backend env file artifact
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: backend-env
+            #     path: ./backend/.env
 
-            - name: Archive frontend env file artifact
-              uses: actions/upload-artifact@v4
-              with:
-                name: frontend-env
-                path: ./frontend/.env
+            # - name: Archive frontend env file artifact
+            #   uses: actions/upload-artifact@v4
+            #   with:
+            #     name: frontend-env
+            #     path: ./frontend/.env
 
       
             - name: Build and Push Docker image
@@ -126,17 +126,28 @@ jobs:
                   sudo chmod +x /usr/local/bin/docker-compose
                   docker-compose --version
             
-            - name: Download backend env file (artifact)
-              uses: actions/download-artifact@v4
-              with:
-                name: backend-env
-                path: ./backend
+            # - name: Download backend env file (artifact)
+            #   uses: actions/download-artifact@v4
+            #   with:
+            #     name: backend-env
+            #     path: ./backend
 
-            - name: Download frontend env file (artifact)
-              uses: actions/download-artifact@v4
-              with:
-                name: frontend-env
-                path: ./frontend
+            # - name: Download frontend env file (artifact)
+            #   uses: actions/download-artifact@v4
+            #   with:
+            #     name: frontend-env
+            #     path: ./frontend
+            - name: Create .env file for backend
+              run: |
+                echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> ./backend/.env
+                echo "BCRYPT_SALT_ROUNDS=${{ secrets.BCRYPT_SALT_ROUNDS }}" >> ./backend/.env
+                echo "DATABASE_URL=${{ secrets.DATABASE_URL }}" >> ./backend/.env
+                echo "REACT_APP_URL=${{ secrets.REACT_APP_URL }}" >> ./backend/.env                
+                echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" >> ./backend/.env 
+
+            - name: Create .env file for frontend
+              run: |
+                echo "VITE_BACKEND_URL=${{ secrets.VITE_BACKEND_URL }}" >> ./frontend/.env
 
             - name: Start Backend and Frontend (Docker)
               env:
