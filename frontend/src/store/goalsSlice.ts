@@ -34,7 +34,7 @@ export const fetchGoals = createAsyncThunk(
       const { header } = state.auth;
 
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/goalmonth`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/goalmonth`,
         {
           params: { month: month, year: year },
           headers: header,
@@ -59,7 +59,7 @@ export const updateGoal = createAsyncThunk(
       }
       const { header } = state.auth;
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/goal/${params.id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/goal/${params.id}`,
         {
           description: params.description,
           month: params.month,
@@ -89,7 +89,7 @@ export const deleteGoal = createAsyncThunk(
       }
       const { header } = state.auth;
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/goal/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/goal/${id}`,
         { headers: header },
       );
 
@@ -112,7 +112,7 @@ export const addGoal = createAsyncThunk(
       const { header } = state.auth;
 
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/goal`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/goal`,
         {
           description: params.description,
           month: params.month,
@@ -144,7 +144,7 @@ export const updateGoalListStatus = createAsyncThunk(
       const { header } = state.auth;
 
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api//goallist`,
+        `${import.meta.env.VITE_BACKEND_URL}/api//goallist`,
         { data: params },
         { headers: header },
       );

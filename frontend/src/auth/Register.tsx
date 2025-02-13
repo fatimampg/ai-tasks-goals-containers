@@ -51,7 +51,7 @@ const Register = () => {
 
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/user`,
+        `${import.meta.env.VITE_BACKEND_URL}/user`,
         userData,
       );
       const newUser = await response.data;

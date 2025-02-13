@@ -11,7 +11,7 @@ const DashboardHeader = ({ header }: DashboardHeaderParams) => {
   const getUserName = async (header: { [key: string]: string }) => {
     try {
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/username`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/username`,
         {
           headers: header,
         },
@@ -37,7 +37,7 @@ const DashboardHeader = ({ header }: DashboardHeaderParams) => {
   return (
     <>
       <div className="dashboard__title-welcome">
-        <h2 data-testid="username"> Hello {userName}</h2>
+        <h3 data-testid="username"> Hello {userName}</h3>
         <img
           src={waving_hand}
           alt="waving-hand"
@@ -45,7 +45,7 @@ const DashboardHeader = ({ header }: DashboardHeaderParams) => {
         />
       </div>
 
-      <h3 className="dashboard__sub-title">Today, {formattedDate}</h3>
+      <h5 className="dashboard__sub-title">Today, {formattedDate}</h5>
     </>
   );
 };

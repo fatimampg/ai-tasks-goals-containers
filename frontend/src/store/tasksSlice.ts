@@ -36,7 +36,7 @@ export const fetchTasks = createAsyncThunk(
       const gteString = gte.toISOString();
       const lteString = lte.toISOString();
       const response = await axios.get(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/taskint`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/taskint`,
         {
           params: { gte: gteString, lte: lteString },
           headers: header,
@@ -62,7 +62,7 @@ export const updateTask = createAsyncThunk(
       }
       const { header } = state.auth;
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/task/${params.id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/task/${params.id}`,
         {
           id: params.id,
           description: params.description,
@@ -98,7 +98,7 @@ export const updateTaskListStatus = createAsyncThunk(
       const { header } = state.auth;
 
       const response = await axios.put(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/tasklist`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/tasklist`,
         { data: params },
         { headers: header },
       );
@@ -123,7 +123,7 @@ export const deleteTask = createAsyncThunk(
       }
       const { header } = state.auth;
       const response = await axios.delete(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/task/${id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/task/${id}`,
         { headers: header },
       );
 
@@ -146,7 +146,7 @@ export const addTask = createAsyncThunk(
       const { header } = state.auth;
 
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/api/task`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/task`,
         {
           description: params.description,
           priority: params.priority,

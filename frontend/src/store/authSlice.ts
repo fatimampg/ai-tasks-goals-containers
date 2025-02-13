@@ -31,7 +31,7 @@ export const signInUser = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_REACT_APP_AUTH_URL}/signin`,
+        `${import.meta.env.VITE_BACKEND_URL}/signin`,
         userData,
       );
       const { token } = response.data;
