@@ -159,7 +159,7 @@ jobs:
                 docker-compose -f docker-compose.yml ps
             
             - name: Check running containers ports
-              run: docker ps --format "table {{.Name}}\t{{.Ports}}"
+              run: docker ps --format "table {{.Names}}\t{{.Ports}}"
 
             - name: Run E2E tests
               uses: cypress-io/github-action@v6
