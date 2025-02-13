@@ -41,7 +41,6 @@
 
 1. **Install Dependencies, build and run tests** for both the frontend and backend.
 2. **Docker-compose Build and Push** to ensure the application works within the containerized environment (docker-compose manages all containers - database, api and client).
-3. **Run E2E tests** using Cypress.
 
 GitHub Actions configuration file: `.github/workflows/ci.yml`
 
